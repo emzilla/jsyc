@@ -23,12 +23,12 @@ img {
   margin: -1px; padding: 0; border: 0; 
 }
 
-.app {
+/* .app {
   background-image: url('../../static/body-bg.png');
   display: grid;
   grid-template-columns: 200px 1fr;
   width: 940px;
-}
+} */
 
 .header {
   background-color: #C2E6E5;

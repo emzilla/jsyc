@@ -1,11 +1,14 @@
 import React from "react"
 import "./reset.css"
 import "./index.css"
+import { 
+  Layout
+} from '../components/'
 
 class Index extends React.Component {
   render() {
     return (
-      <div className="app">
+      <Layout>
         <header className="header">
           <h1>
             <span className="visuallyhidden">Johnson Street Yacht Club Menu</span>
@@ -135,7 +138,7 @@ class Index extends React.Component {
             </div>
           </section>
         </main>
-      </div>
+      </Layout>
     )
   }
 }

@@ -9,8 +9,9 @@ const StyledTopBanner = styled.section`
   background-size: cover;
   border-bottom: solid 4px #ccc;
   box-shadow: inset 0px -1px 0px white, inset 0px -2px 0px #ccc, 0px 1px 0px #8c8c8c, 0px 2px 0px #000;
+  margin-left: 2px;
   position: relative;
-  width: 100%;
+  width: calc(100% - 2px);
   z-index: 0;
 `
 

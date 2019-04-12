@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import config from '../../../data/SiteConfig'
+import { Helmet }  from 'react-helmet'
 import { Header, Menu, Main, TopBanner } from '../index'
 
 const StyledLayoutWrapper = styled.div`
@@ -10,9 +12,13 @@ const StyledLayoutWrapper = styled.div`
 
 class Layout extends React.Component {
     render() {
-        const {children, ...theme} = this.props
+        const {children, pageTitle, ...theme} = this.props
         return (
             <StyledLayoutWrapper>
+                <Helmet>
+                    <title>{pageTitle ? `${config.siteTitle} | ${pageTitle}` : `${config.siteTitle}`}</title>
+                    <meta name="description" content={config.siteDescription} />  
+                </Helmet>
                 <Header>
                     <Menu links={[
                         { path: '/', name: 'Homepage', },

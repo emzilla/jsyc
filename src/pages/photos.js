@@ -9,7 +9,7 @@ import "./photos.css"
 class Photos extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout theme={'alt'} pageTitle="Photos">
         <section className="photos">
           <h1 className="photos__title" >Photos coming soon...</h1>
           <div className="photos__under-construction">

@@ -7,6 +7,8 @@ const StyledHeader = styled.header`
   background-color: #C2E6E5;
   background-image: url(${headerBG});
   padding: 35px 15px 35px 35px;
+  border-right: solid 4px #ccc;
+	box-shadow: inset -1px 0px 0px white, inset -2px 0px 0px #ccc;
 `
 
 class Header extends React.Component {

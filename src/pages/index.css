@@ -23,10 +23,6 @@ img {
   margin: -1px; padding: 0; border: 0; 
 }
 
-.menu__link.menu__link--active a {
-  color: #2095B0;
-}
-
 .contact__address {
   color: #113444;
   font-family: Arial, Helvetica, sans-serif;
@@ -61,7 +57,8 @@ img {
 
 .homepage-intro {
   background-image: url('../../static/welcome-background.png');
-  width: 100%;
+  width: calc(100%-2px);
+  margin-left: 2px; /* allow for border */
 }
 
 .homepage-intro__banner {

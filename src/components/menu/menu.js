@@ -27,7 +27,7 @@ class Menu extends React.Component {
         <StyledMenuList>
           {links && links.links.map((link, index) => (
             <StyledMenuListItem key={index}>
-              <Link to={link.path}>{link.name}</Link>
+              <Link activeStyle={{color: '#2095B0'}} to={link.path}>{link.name}</Link>
             </StyledMenuListItem>
           ))}
           </StyledMenuList>

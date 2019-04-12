@@ -81,7 +81,7 @@ class Index extends React.Component {
         <section className="guestbook-feature">
           <h1 className="guestbook-feature__title"><span className="visuallyhidden">Yacht Club's</span> <img src="../../gifs/yacht-clubs.gif" alt="Yacht Club's"/> <br />gUEstbOOk</h1>
           <h2 className="guestbook-feature__subtitle">*~ -.. FRIENDS ONLY ..- ~*</h2>
-          <a href="#" className="guestbook-feature__link">
+          <a href="/guestbook" className="guestbook-feature__link">
             <span className="visuallyhidden">Click Here</span>
             <img src="../../gifs/click-here.gif" alt="Click Here gif"/>
           </a>

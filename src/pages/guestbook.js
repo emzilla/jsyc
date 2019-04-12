@@ -10,7 +10,7 @@ import "./guestbook.css"
 class Guestbook extends React.Component {
   render() {
     return (
-      <Layout theme={'alt'}>
+      <Layout theme={'alt'} pageTitle="Guestbook">
         <section className="guestbook">
         <h1 className="guestbook__title">Yacht Club Guestbook</h1>
         <h2 className="guestbook__subtitle">This guestbook currently has 4 entries</h2>
@@ -20,23 +20,23 @@ class Guestbook extends React.Component {
         <div className="guestbook__content">
           <section className="guestbook-entry">
             <h1 className="guestbook-entry__name">Josh</h1>
-            <h2 className="guestbook-entry__date">01/01/19</h2>
+            <h2 className="guestbook-entry__date">02/01/19</h2>
             <span className="guestbook-entry__comments-title">comments</span>
             <p className="guestbook-entry__comment">
-              dOpE site, can’t wait to see the photos section!
+              dOpE sItE, can’t wait to see the photos section!
             </p>
           </section>
           <section className="guestbook-entry">
-            <h1 className="guestbook-entry__name">kim</h1>
-            <h2 className="guestbook-entry__date">01/01/19</h2>
+            <h1 className="guestbook-entry__name">yo MoMMa</h1>
+            <h2 className="guestbook-entry__date">01/30/19</h2>
             <span className="guestbook-entry__comments-title">comments</span>
             <p className="guestbook-entry__comment">
               hey gurl hey this site is awesome. gotta get that music page up soon so i can get the freshest midi files.
             </p>
           </section>
           <section className="guestbook-entry">
-            <h1 className="guestbook-entry__name">MICHAEL</h1>
-            <h2 className="guestbook-entry__date">01/01/19</h2>
+            <h1 className="guestbook-entry__name">MICHAEL MCDONALD</h1>
+            <h2 className="guestbook-entry__date">01/15/19</h2>
             <span className="guestbook-entry__comments-title">comments</span>
             <p className="guestbook-entry__comment">
               THIS SITE IS WIERD BUT I LIKE THE CATS PAGE.

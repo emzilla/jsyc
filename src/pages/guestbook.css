@@ -26,10 +26,25 @@
   background-color: #CCE6F8;
   border: 1px solid #000;
   padding: 25px 0;
+  font-size: 14px;
 }
 
 .guestbook-entry {
   padding: 20px 25px 20px 0;
+  margin: 0 30px;
+  border-bottom: 2px solid #ccc;
+  border-bottom-style: groove;
+}
+
+.guestbook-entry__date,
+.guestbook-entry__comments-title {
+  font-size: 12px;
+  color: #26CCB8;
+}
+
+.guestbook-entry__comments-title {
+  display: block;
+  margin-top: 20px;
 }
   
 .guestbook-footer {

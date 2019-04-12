@@ -9,7 +9,7 @@ import "./cats.css"
 class Cats extends React.Component {
   render() {
     return (
-      <Layout theme={"cats"}>
+      <Layout theme={"cats"} pageTitle="Cats">
         <section className="cats">
           <h1 className="cats__title" >
             <span className="visuallyhidden">Sweet Cats</span>

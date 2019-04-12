@@ -30,6 +30,10 @@ class Menu extends React.Component {
               <Link activeStyle={{color: '#2095B0'}} to={link.path}>{link.name}</Link>
             </StyledMenuListItem>
           ))}
+          {/* TODO: Fix this */}
+          <StyledMenuListItem>
+            <a href="http://oneraleigh.co" target="_blank">Raleigh, NC</a>
+          </StyledMenuListItem>
           </StyledMenuList>
       </StyledMenu>
     ) 

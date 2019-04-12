@@ -19,8 +19,6 @@ class Layout extends React.Component {
                         { path: '/photos', name: 'Photos', },
                         { path: '/guestbook', name: 'Guestbook', },
                         { path: '/cats', name: 'for the love of cats =^._.^= ∫', },
-                        { path: '#', name: 'Raleigh, NC', },
-                        { path: '#', name: 'fav LiNkS', },
                       ]} />
                 </Header>
                 <Main {...theme}>

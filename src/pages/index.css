@@ -23,41 +23,6 @@ img {
   margin: -1px; padding: 0; border: 0; 
 }
 
-.app {
-  background-image: url('../../static/body-bg.png');
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  width: 940px;
-}
-
-.header {
-  background-color: #C2E6E5;
-  background-image: url('../../static/header-bg.png');
-  padding: 35px 15px 35px 35px;
-}
-
-.menu {
-  margin-bottom: 20px;
-}
-
-.menu__list {
-  padding-left: 35px;
-}
-
-.menu__list li {
-  margin-bottom: 20px;
-}
-
-.menu__link a {
-  color: #EE252B;
-  font-size: 20px;
-}
-
-.menu__link.menu__link--active a {
-  color: #2095B0;
-}
-
-
 .contact__address {
   color: #113444;
   font-family: Arial, Helvetica, sans-serif;
@@ -90,28 +55,10 @@ img {
   font-size: 14px;
 }
 
-.main {
-  /* box-shadow: inset 1px 0px 0px #000; */
-}
-
-.top-banner {
-  width: 100%;
-  background-image: url('../../static/gifs/sunset-banner.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.top-banner__content {
-  text-align: right;
-  padding: 15px;
-  font-family: 'Comic Sans MS', Arial, sans-serif;
-  font-size: 14px;
-  color: #FFFF00;
-}
-
 .homepage-intro {
   background-image: url('../../static/welcome-background.png');
-  width: 100%;
+  width: calc(100%-2px);
+  margin-left: 2px; /* allow for border */
 }
 
 .homepage-intro__banner {

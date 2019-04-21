@@ -5,14 +5,15 @@ import {
 } from '../components/'
 import "../pages/reset.css"
 import "../pages/index.css"
-
+  
 class TestPageTemplate extends React.Component {
   render() {
     const currentPage = this.props.data.wordpressPage
     
     return (
-      <Layout>
+      <Layout theme={currentPage.slug === "sample-page" && 'alt' } >
         <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+        <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
         <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
       </Layout> 
     )
@@ -27,6 +28,7 @@ export const pageQuery = graphql`
       title
       content
       date(formatString: "MMMM DD, YYYY")
+      slug
     }
     site {
       id

@@ -1,6 +1,6 @@
 module.exports = {
   siteTitle: "Johnson Street Yacht Club", // Site title.
-  siteTitleAlt: "Salty as hell", // Alternative site title for SEO.
+  siteSubtitle: "Salty as hell", // Alternative site title for SEO.
   // siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.

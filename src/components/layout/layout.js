@@ -22,9 +22,9 @@ class Layout extends React.Component {
                 <Header>
                     <Menu links={[
                         { path: '/', name: 'Homepage', },
-                        { path: '/photos', name: 'Photos', },
-                        { path: '/guestbook', name: 'Guestbook', },
-                        { path: '/cats', name: 'for the love of cats =^._.^= ∫', },
+                        { path: '/photos-page', name: 'Photos', },
+                        { path: '/guestbook-page', name: 'Guestbook', },
+                        { path: '/cats-page', name: 'for the love of cats =^._.^= ∫', },
                       ]} />
                 </Header>
                 <Main {...theme}>

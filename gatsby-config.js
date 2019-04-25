@@ -17,7 +17,17 @@ module.exports = {
         baseUrl: 'http://localhost:8888/jsyc',
         protocol: 'http',
         hostingWPCOM: false,
-        useACF: true
+        useACF: true,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/users",
+          "**/menus"
+        ],
       }
     }
   ]

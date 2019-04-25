@@ -21,19 +21,16 @@ const StyledMenuListItem = styled.li`
 
 class Menu extends React.Component {
   render () {
-    const links = this.props
+    const { menuLinks } = this.props
+
     return (
       <StyledMenu>
         <StyledMenuList>
-          {links && links.links.map((link, index) => (
-            <StyledMenuListItem key={index}>
-              <Link activeStyle={{color: '#2095B0'}} to={link.path}>{link.name}</Link>
+          {menuLinks && menuLinks.map((link) => (
+            <StyledMenuListItem key={link.object_id}>
+              <Link activeStyle={{color: '#2095B0'}} to={link.url}>{link.title}</Link>
             </StyledMenuListItem>
           ))}
-          {/* TODO: Fix this */}
-          <StyledMenuListItem>
-            <a href="http://oneraleigh.co" target="_blank">Raleigh, NC</a>
-          </StyledMenuListItem>
           </StyledMenuList>
       </StyledMenu>
     ) 

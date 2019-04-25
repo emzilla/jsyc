@@ -12,7 +12,7 @@ const StyledLayoutWrapper = styled.div`
 
 class Layout extends React.Component {
     render() {
-        const {children, pageTitle, ...theme} = this.props
+        const {children, pageTitle, menuData, ...theme} = this.props
         return (
             <StyledLayoutWrapper>
                 <Helmet>
@@ -20,12 +20,7 @@ class Layout extends React.Component {
                     <meta name="description" content={config.siteDescription} />  
                 </Helmet>
                 <Header>
-                    <Menu links={[
-                        { path: '/', name: 'Homepage', },
-                        { path: '/photos-page', name: 'Photos', },
-                        { path: '/guestbook-page', name: 'Guestbook', },
-                        { path: '/cats-page', name: 'for the love of cats =^._.^= ∫', },
-                      ]} />
+                    <Menu menuLinks={menuData} />
                 </Header>
                 <Main {...theme}>
                     <TopBanner />

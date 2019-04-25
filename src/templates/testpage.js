@@ -11,9 +11,11 @@ import "../pages/photos.css"
 class TestPageTemplate extends React.Component {
   render() {
     const currentPage = this.props.data.wordpressPage
-    
+
+    const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
+
     return (
-      <Layout theme={currentPage.slug === 'photos' ? 'alt' : currentPage.slug ===  'cats' ? 'cats' : undefined }>
+      <Layout menuData={menuData} theme={currentPage.slug === 'photos' ? 'alt' : currentPage.slug ===  'cats' ? 'cats' : undefined }>
         <span className="visuallyhidden">
           <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         </span>
@@ -61,6 +63,18 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         subtitle
+      }
+    }
+    allWordpressWpApiMenusMenusItems {
+      edges {
+        node {
+          items {
+            title
+            object_slug
+            object_id
+            url
+          }
+        }
       }
     }
   }

@@ -8,7 +8,7 @@ import "../pages/index.css"
 import "../pages/cats.css"
 import "../pages/photos.css"
   
-class TestPageTemplate extends React.Component {
+class PageTemplate extends React.Component {
   render() {
     const currentPage = this.props.data.wordpressPage
 
@@ -48,7 +48,7 @@ class TestPageTemplate extends React.Component {
   }
 }
 
-export default TestPageTemplate
+export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {

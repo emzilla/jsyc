@@ -14,6 +14,8 @@ class PageTemplate extends React.Component {
 
     const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
+    // console.log(currentPage)
+
     return (
       <Layout menuData={menuData} theme={currentPage.slug === 'photos' ? 'alt' : currentPage.slug ===  'cats' ? 'cats' : undefined }>
         <span className="visuallyhidden">
@@ -34,7 +36,7 @@ class PageTemplate extends React.Component {
             </div>
           </section>
           :
-          <p>Test</p>
+          <p>We're sorry, this page does not exist.</p>
         }
 
         <div className="ads">

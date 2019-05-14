@@ -2,6 +2,7 @@ import React from "react"
 import { 
   Layout
 } from '../components/'
+import { graphql } from "gatsby"
 import "./reset.css"
 import "./index.css"
 import "./guestbook.css"
@@ -9,8 +10,12 @@ import "./guestbook.css"
 
 class Guestbook extends React.Component {
   render() {
+
+    const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
+
+
     return (
-      <Layout theme={'alt'} pageTitle="Guestbook">
+      <Layout theme={'alt'} pageTitle="Guestbook" menuData={menuData}>
         <section className="guestbook">
         <h1 className="guestbook__title">Yacht Club Guestbook</h1>
         <h2 className="guestbook__subtitle">This guestbook currently has 4 entries</h2>
@@ -66,3 +71,20 @@ class Guestbook extends React.Component {
 }
 
 export default Guestbook
+
+export const indexQuery = graphql`
+  query {
+    allWordpressWpApiMenusMenusItems {
+      edges {
+        node {
+          items {
+            title
+            object_slug
+            object_id
+            url
+          }
+        }
+      }
+    }
+  }
+`

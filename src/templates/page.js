@@ -14,7 +14,7 @@ class PageTemplate extends React.Component {
 
     const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
-    // console.log(currentPage)
+    const chosenAds = !!this.props.data.wordpressPage.acf && this.props.data.wordpressPage.acf.ads[0]
 
     return (
       <Layout menuData={menuData} theme={currentPage.slug === 'photos' ? 'alt' : currentPage.slug ===  'cats' ? 'cats' : undefined }>
@@ -39,12 +39,28 @@ class PageTemplate extends React.Component {
           <p>We're sorry, this page does not exist.</p>
         }
 
-        <div className="ads">
-          {/* This should be a custom field on the page */}
-          <a href="http://oneraleigh.co" target="_blank">
-            <img src="../../one-raleigh-fake-ad.gif" alt="Ad for One Raleigh website"/>
-          </a>
-        </div>
+        {!!chosenAds && (
+          <div className="ads">
+            {chosenAds === "Bittersweet" ?
+            (<a href="http://bittersweetraleigh.com" target="_blank">
+              <img src="../../bittersweet-fake-ad.gif" alt="Ad for Bittersweet"/>
+            </a>)
+            : chosenAds === "One Raleigh" ?
+              (<a href="http://oneraleigh.co" target="_blank">
+                <img src="../../one-raleigh-fake-ad.gif" alt="Ad for One Raleigh website"/>
+              </a>)
+              : chosenAds === "Raleigh Provisions" ?
+              (<a href="http://raleighprovisions.com" target="_blank">
+                <img src="../../rp-fake-ad.gif" alt="Ad for Raleigh Provisions website"/>
+              </a>) 
+              : 
+              (<a href="http://raleighprovisions.com" target="_blank">
+                <img src="../../rp-fake-ad.gif" alt="Ad for Raleigh Provisions website"/>
+              </a>)
+          }
+          </div>
+        )}
+       
       </Layout> 
     )
   }
@@ -59,6 +75,9 @@ export const pageQuery = graphql`
       content
       date(formatString: "MMMM DD, YYYY")
       slug
+      acf {
+        ads
+      }
     }
     site {
       id

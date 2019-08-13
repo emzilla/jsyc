@@ -2,13 +2,22 @@ import React from "react"
 import { 
   Layout
 } from '../components/'
+import { graphql } from "gatsby"
 import "./reset.css"
 import "./index.css"
 
 class Index extends React.Component {
   render() {
+    const allPages = this.props.data.allWordpressPage.edges
+    
+    const homePageData = allPages.filter(page => page.node.slug === "home")[0].node
+
+    const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
+
+    const acfFields = homePageData.acf
+
     return (
-      <Layout>
+      <Layout menuData={menuData}>
         <section className="homepage-intro">
           <div className="homepage-intro__banner">
             <h1>
@@ -16,32 +25,40 @@ class Index extends React.Component {
             <img src="../../gifs/welcome.gif" alt="Welcome"/>
             </h1>
           </div>
-          <div className="homepage-intro__marquee">
-            <span className="homepage-intro__marquee-content">Drink special every Wednesday: Pirate's Booty</span>
-            <span className="homepage-intro__marquee-content">Drink special every Wednesday: Pirate's Booty</span>
-          </div>
+          {!!acfFields.homepage_marquee &&
+            (
+              <div className="homepage-intro__marquee">
+                <span dangerouslySetInnerHTML={{__html: acfFields.homepage_marquee}} className="homepage-intro__marquee-content"/>
+                <span dangerouslySetInnerHTML={{__html: acfFields.homepage_marquee}} className="homepage-intro__marquee-content"/>
+              </div>
+            )
+          }
         </section>
         <section className="homepage-content">
           <div className="homepage-content__title">
-            <h1 className="visuallyhidden">Johnson Street Yacht Club</h1>
+            <h1 dangerouslySetInnerHTML={{ __html: homePageData.title }} className="visuallyhidden" />
             <img src="../../gifs/shark.gif" alt="shark swimming"/>
             <img src="../../johnson-street-yacht-club-logo-shittly-photoshopped.png" alt="Johnson Street Yacht Club Logo"/>
             <img src="../../gifs/anchor-spin.gif" alt="spinning anchor"/>
           </div>
-          <div className="homepage-content__text">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut ullam sapiente praesentium facilis, rem eius neque, cupiditate iure consectetur animi, odit dolores deserunt facere assumenda ad blanditiis dicta? Ea, molestiae.</p>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: homePageData.content }} className="homepage-content__text" />
         </section>
-        <section className="featured-quote">
-          <img src="../../gifs/beer-banner.gif" alt="beer sliding across screen"/>
-            <div className="featured-quote__quote">
-              <div className="featured-quote__images">
-                <img src="../../gifs/sailboat-sailing.gif" alt="sailboat"/>
-                <img src="../../gifs/dancing-baby.gif" alt="dancing baby from Ally McBeal"/>
+        {!!acfFields.homepage_featured_quote &&
+          <section className="featured-quote">
+            <img src="../../gifs/beer-banner.gif" alt="beer sliding across screen"/>
+              <div className="featured-quote__quote">
+                <div className="featured-quote__images">
+                  <img src="../../gifs/sailboat-sailing.gif" alt="sailboat"/>
+                  <img src="../../gifs/dancing-baby.gif" alt="dancing baby from Ally McBeal"/>
+                </div>        
+                <blockquote className="featured-quote__text">
+                  <span dangerouslySetInnerHTML={{__html: acfFields.homepage_featured_quote}} />
+                  <br />
+                  <span dangerouslySetInnerHTML={{__html: acfFields.homepage_featured_quote_author}} className="featured-quote__text--author" />
+                </blockquote>
               </div>
-              <blockquote className="featured-quote__text">We are the people our parents warned us about<br /><span className="featured-quote__text--author">- Jimmy Buffet</span></blockquote>
-            </div>
-        </section>
+          </section>
+        }
         <section className="contact-block">
           <div className="contact-block__banner contact-block__banner--top">
             <img src="../../gifs/sharkfin-banner.gif" alt="shark swimming across screen"/>
@@ -103,3 +120,34 @@ class Index extends React.Component {
 }
 
 export default Index
+
+export const indexQuery = graphql`
+  query {
+    allWordpressPage {
+      edges {
+        node {
+          slug
+          title
+          content
+          acf {
+            homepage_marquee
+            homepage_featured_quote
+            homepage_featured_quote_author
+          }
+        }
+      }
+    }
+    allWordpressWpApiMenusMenusItems {
+      edges {
+        node {
+          items {
+            title
+            object_slug
+            object_id
+            url
+          }
+        }
+      }
+    }
+  }
+`

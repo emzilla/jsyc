@@ -26,8 +26,8 @@ class Header extends React.Component {
           Raleigh, NC 27603</p>
           <img src="../../gifs/anarchygif.gif" alt="spinning anarchy symbol"/>
           <ul className="contact__hours">
-            <li>there aren't any real hours yet.</li>
-            <li>but when there are you'll find them here</li>
+            <li>OPENING SOON</li>
+            <li>Check back here for hours.</li>
           </ul>
           <div className="contact__footer">
             <img src="../../gifs/steering-wheel.gif" alt="ship steering wheel"/>

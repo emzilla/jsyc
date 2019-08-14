@@ -8,7 +8,7 @@
   margin-bottom: 25px;
 }
 
-.cats__grid {
+.cats__grid > * {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
@@ -17,6 +17,6 @@
   align-items: center;
 }
 
-.cats__grid > *:nth-child(4n) {
+.cats__grid > * > *:nth-child(4n) {
   grid-column: 1 / -1;
 }

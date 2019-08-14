@@ -75,7 +75,7 @@ class Index extends React.Component {
                   <span className="visuallyhidden">Phone Number</span>
                   <img src="../../gifs/cellphone.gif" alt="Phone"/>
                 </h2>
-                <p>919-867-5309</p>
+                <p>‭719-266-2837</p>
               </li>
               <li>
                 <h2>
@@ -90,7 +90,7 @@ class Index extends React.Component {
                   <span className="visuallyhidden">Email</span>
                   <img src="../../gifs/email-spin.gif" alt="Email"/>
                 </h2>
-                <p>jsyachtclub@hotmail.com</p>
+                <p>johnsonstyachtclub@gmail.com</p>
               </li>
             </ul>
           </div>

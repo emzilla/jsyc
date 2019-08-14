@@ -1,5 +1,7 @@
+require('dotenv').config({
+  path: '.env',
+});
 const config = require('./data/SiteConfig')
-
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
@@ -14,9 +16,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'http://localhost:8888/jsyc',
+        baseUrl: 'wp.jsyachtclub.com',
         protocol: 'http',
         hostingWPCOM: false,
+        auth: {
+          wpcom_app_clientSecret: process.env.WORDPRESS_SECRET,
+          wpcom_app_clientId: process.env.WORDPRESS_CLIENTID,
+          wpcom_user: process.env.WORDPRESS_USERNAME,
+          wpcom_pass: process.env.WORDPRESS_PASSWORD,
+        },
         useACF: true,
         includedRoutes: [
           "**/categories",
@@ -28,6 +36,10 @@ module.exports = {
           "**/users",
           "**/menus"
         ],
+        searchAndReplaceContentUrls: {
+          sourceUrl: "http://wp.jsyachtclub.com",
+          replacementUrl: "http://jsyachtclub.com",
+        },
       }
     }
   ]

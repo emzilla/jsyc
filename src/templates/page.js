@@ -14,14 +14,13 @@ class PageTemplate extends React.Component {
 
     const menuData = this.props.data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
-    const chosenAds = !!this.props.data.wordpressPage.acf && this.props.data.wordpressPage.acf.ads[0]
-
+    const chosenAds = (!!this.props.data.wordpressPage.acf && !!this.props.data.wordpressPage.acf.ads) && this.props.data.wordpressPage.acf.ads[0]
+    
     return (
       <Layout menuData={menuData} theme={currentPage.slug === 'photos' ? 'alt' : currentPage.slug ===  'cats' ? 'cats' : undefined }>
         <span className="visuallyhidden">
           <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         </span>
-
         {currentPage.slug === 'cats' ?
           <section className="cats">
             <div className="cats__title">

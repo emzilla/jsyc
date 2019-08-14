@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 const headerBG = `../../header-bg.png`
@@ -16,10 +17,12 @@ class Header extends React.Component {
     const { children } = this.props
     return (
       <StyledHeader>
-        <h1>
-          <span className="visuallyhidden">Johnson Street Yacht Club Menu</span>
-          <img src="../../gifs/links-wolf.gif" alt="Sparkly Wolf that says Links"/>
-        </h1>
+        <Link to={"/"}>
+          <h1>
+            <span className="visuallyhidden">Johnson Street Yacht Club Menu</span>
+            <img src="../../gifs/links-wolf.gif" alt="Sparkly Wolf that says Links"/>
+          </h1>
+        </Link>
         { children }
         <div className="contact">
           <p className="contact__address">710 W Johnson St,<br />
@@ -27,7 +30,6 @@ class Header extends React.Component {
           <img src="../../gifs/anarchygif.gif" alt="spinning anarchy symbol"/>
           <ul className="contact__hours">
             <li>OPENING SOON</li>
-            <li>Check back here for hours.</li>
           </ul>
           <div className="contact__footer">
             <img src="../../gifs/steering-wheel.gif" alt="ship steering wheel"/>

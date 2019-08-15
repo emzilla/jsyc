@@ -9,7 +9,6 @@ module.exports = {
     title: config.siteTitle,
     subtitle: config.siteSubtitle
   },
-  pathPrefix: "/jsyc",
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 const StyledMenu = styled.nav`
@@ -19,6 +18,10 @@ const StyledMenuListItem = styled.li`
   }
 `
 
+const StyledMenuLink = styled.a`
+  color: #2095B0;
+`
+
 class Menu extends React.Component {
   render () {
     const { menuLinks } = this.props
@@ -28,7 +31,7 @@ class Menu extends React.Component {
         <StyledMenuList>
           {menuLinks && menuLinks.map((link) => (
             <StyledMenuListItem key={link.object_id}>
-              <Link activeStyle={{color: '#2095B0'}} to={link.url}>{link.title}</Link>
+              <StyledMenuLink href={link.url}>{link.title}</StyledMenuLink>
             </StyledMenuListItem>
           ))}
           </StyledMenuList>

@@ -35,10 +35,10 @@ module.exports = {
           "**/users",
           "**/menus"
         ],
-        searchAndReplaceContentUrls: {
-          sourceUrl: "http://wp.jsyachtclub.com",
-          replacementUrl: "http://jsyachtclub.com",
-        },
+        // searchAndReplaceContentUrls: {
+        //   sourceUrl: "http://wp.jsyachtclub.com",
+        //   replacementUrl: "/",
+        // },
       }
     }
   ]

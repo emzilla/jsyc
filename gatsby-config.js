@@ -40,6 +40,12 @@ module.exports = {
         //   replacementUrl: "/",
         // },
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-148472402-1"
+      }
     }
   ]
 }

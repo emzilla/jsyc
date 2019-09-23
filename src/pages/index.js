@@ -90,7 +90,7 @@ class Index extends React.Component {
                   <span className="visuallyhidden">Email</span>
                   <img src="../../gifs/email-spin.gif" alt="Email"/>
                 </h2>
-                <p>johnsonstyachtclub@gmail.com</p>
+                <p>heythere@jsyachtclub.com</p>
               </li>
             </ul>
           </div>

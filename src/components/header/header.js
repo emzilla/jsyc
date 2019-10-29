@@ -28,9 +28,13 @@ class Header extends React.Component {
           <p className="contact__address">710 W Johnson St,<br />
           Raleigh, NC 27603</p>
           <img src="../../gifs/anarchygif.gif" alt="spinning anarchy symbol"/>
-          <ul className="contact__hours">
-            <li>OPENING SOON</li>
-          </ul>
+          <section className="contact__hours">
+            <h2>Hours</h2>
+            <ul>
+              <li>Mon - Fri 3pm - 2am</li>
+              <li>Sat & Sun 12pm - 2am</li>
+            </ul>
+          </section>
           <div className="contact__footer">
             <img src="../../gifs/steering-wheel.gif" alt="ship steering wheel"/>
             <img src="../../gifs/smiley-beers.gif" alt="smilies clinking beers"/>

@@ -16,7 +16,7 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         baseUrl: 'wp.jsyachtclub.com',
-        protocol: 'http',
+        protocol: 'https',
         hostingWPCOM: false,
         auth: {
           wpcom_app_clientSecret: process.env.WORDPRESS_SECRET,

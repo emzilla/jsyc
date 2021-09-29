@@ -32,9 +32,9 @@ class Header extends React.Component {
             <h2>Hours</h2>
             <ul>
               <li>Mon 7 pm - 12 am</li>
-              <li>Tue closed</li>
+              <li>Closed Tues</li>
               <li>Wed - Fri 3pm - 2am</li>
-              <li>Saturday &amp; Sun 12pm - 2am</li>
+              <li>Sat &amp; Sun 12pm - 2am</li>
             </ul>
           </section>
           <div className="contact__footer">
